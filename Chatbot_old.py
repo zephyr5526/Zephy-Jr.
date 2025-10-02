@@ -1890,7 +1890,7 @@ async def main():
         normal_queue.clear()
 
         # ✅ Get video IDs
-        video_id_1 = extract_video_id(os.getenv('VIDEO_ID_1', 'OjiysZP-ZR4'))
+        video_id_1 = extract_video_id(os.getenv('VIDEO_ID_1', 'O-sJ8qOvNr4'))
         video_id_2 = extract_video_id(os.getenv('VIDEO_ID_2', ''))
 
         # ✅ Start queue processor
@@ -1932,4 +1932,5 @@ if __name__ == "__main__":
     try:
         asyncio.run(main())
     except Exception as e:
+
         logger.error(f"❌ Bot crashed with exception: {e}")
