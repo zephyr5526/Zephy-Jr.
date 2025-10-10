@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0D0D0D;
+  --foreground: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: #0D0D0D;
+  color: #e0e0e0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-image: 
+    linear-gradient(rgba(0, 200, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 200, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  min-height: 100vh;
+  background-color: #0D0D0D;
+}
+
+/* Cyberpunk scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #00C8FF, #FF00CC);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #00FF88, #00C8FF);
+}
+
+/* Custom components */
+.cyber-card {
+  background: linear-gradient(135deg, rgba(0, 200, 255, 0.05) 0%, rgba(255, 0, 204, 0.05) 100%);
+  background-color: #1a1a1a;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.cyber-button {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(to right, #60a5fa, #ec4899);
+  color: #000000;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.cyber-button:hover {
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
+  transform: scale(1.05);
+}
+
+.cyber-button-secondary {
+  padding: 0.75rem 1.5rem;
+  background-color: #1f2937;
+  border: 1px solid rgba(59, 130, 246, 0.5);
+  color: #60a5fa;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+}
+
+.cyber-button-secondary:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-color: #3b82f6;
+}
+
+.cyber-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #1a1a1a;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 0.5rem;
+  color: #f3f4f6;
+  transition: all 0.3s;
+}
+
+.cyber-input::placeholder {
+  color: #9ca3af;
+}
+
+.cyber-input:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.cyber-glow {
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.25);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.cyber-text-glow {
+  text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+}
+
+.cyber-pulse {
+  animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.cyber-bounce {
+  animation: bounce-slow 2s infinite;
+}
+
+.cyber-loading {
+  animation: cyber-loading 1s linear infinite;
+}
+
+.cyber-hover {
+  transition: all 0.3s ease;
+}
+
+.cyber-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 200, 255, 0.3);
+}
+
+/* Keyframes */
+@keyframes glow {
+  0% { box-shadow: 0 0 5px #00C8FF, 0 0 10px #00C8FF, 0 0 15px #00C8FF; }
+  100% { box-shadow: 0 0 10px #00C8FF, 0 0 20px #00C8FF, 0 0 30px #00C8FF; }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes cyber-loading {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Status indicators */
+.status-online {
+  background-color: #10b981;
+  color: #000000;
+  box-shadow: 0 0 10px #00FF88;
+}
+
+.status-offline {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.status-warning {
+  background-color: #eab308;
+  color: #000000;
+  box-shadow: 0 0 10px #FFFF00;
+}
+
+/* Custom selection */
+::selection {
+  background: rgba(0, 200, 255, 0.3);
+  color: #e0e0e0;
+}
+
+/* Focus styles */
+*:focus {
+  outline: 2px solid #00C8FF;
+  outline-offset: 2px;
+}
